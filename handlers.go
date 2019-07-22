@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	
+
 	"github.com/yanzay/tbot/v2"
 )
 
@@ -20,7 +20,7 @@ func (a *application) playHandler(m *tbot.Message) {
 
 // Handle the /score command here
 func (a *application) scoreHandler(m *tbot.Message) {
-	msg := fmt.Sprintf("Scores:\nWins: %s\nDraws: %s\nLosses: %s", a.wins, a.draws, a.losses)
+	msg := fmt.Sprintf("Scores:\nWins: %v\nDraws: %v\nLosses: %v", a.wins, a.draws, a.losses)
 	a.client.SendMessage(m.Chat.ID, msg)
 }
 
