@@ -8,7 +8,7 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
-type score struct{
+type score struct {
 	wins, draws, losses uint
 }
 
