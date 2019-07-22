@@ -8,8 +8,13 @@ import (
 	"github.com/yanzay/tbot/v2"
 )
 
+type score struct{
+	wins, draws, losses uint
+}
+
 type application struct {
 	client *tbot.Client
+	score
 }
 
 var (
@@ -37,6 +42,8 @@ func main() {
 	app.client = bot.Client()
 	bot.HandleMessage("/start", app.startHandler)
 	bot.HandleMessage("/play", app.playHandler)
+	bot.HandleMessage("/score", app.scoreHandler)
+	bot.HandleMessage("/reset", app.resetHandler)
 	bot.HandleCallback(app.callbackHandler)
 	log.Fatal(bot.Start())
 }
